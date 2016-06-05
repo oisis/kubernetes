@@ -1,6 +1,4 @@
 # kubernetes #
-[![Build Status](https://travis-ci.org/cristifalcas/puppet-kubernetes.png?branch=master)](https://travis-ci.org/cristifalcas/puppet-kubernetes)
-
 
 This module installs and configures a kubernetes clutser.
 
