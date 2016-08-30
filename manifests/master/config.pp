@@ -28,6 +28,12 @@ class kubernetes::master::config (
     group   => 'root',
     mode    => '0755',
   } ->
+  file { '/etc/kubernetes/ssl':
+    ensure  => 'directory',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+  } ->
   class { 'kubernetes::master::apiserver': } ->
   class { 'kubernetes::master::controller_manager': } ->
   class { 'kubernetes::master::scheduler': }
