@@ -367,7 +367,7 @@ class kubernetes::master::controller_manager (
 ) inherits kubernetes::master::params {
   include ::kubernetes::master
 
-  file { '/etc/kubernetes/master/controller-manager.conf':
+  file { '/etc/kubernetes/controller-manager':
     ensure  => 'file',
     force   => true,
     content => template("${module_name}/etc/kubernetes/master/controller-manager.erb"),

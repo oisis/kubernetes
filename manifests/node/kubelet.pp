@@ -698,7 +698,7 @@ class kubernetes::node::kubelet (
   # Autoregister and create docker bridge
   if $register_node and $configure_cbr0 {
     package { ['bridge-utils']: ensure => 'present', } ->
-    file { '/etc/kubernetes/node/node_initial.yaml':
+    file { '/etc/kubernetes/node_initial.yaml':
       ensure  => 'file',
       content => template("${module_name}/node.yaml.erb"),
     } ->
@@ -714,7 +714,7 @@ class kubernetes::node::kubelet (
     } ~> Service['docker']
   }
 
-  file { '/etc/kubernetes/node/kubelet.conf':
+  file { '/etc/kubernetes/kubelet.conf':
     ensure  => 'file',
     content => template("${module_name}/etc/kubernetes/node/kubelet.erb"),
   } ~> Service['kubelet']

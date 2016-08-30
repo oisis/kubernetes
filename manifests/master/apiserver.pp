@@ -476,9 +476,11 @@ class kubernetes::master::apiserver (
   $apisrv_watch_cache                       = $kubernetes::master::params::apisrv_watch_cache,
   $apisrv_watch_cache_sizes                 = $kubernetes::master::params::apisrv_watch_cache_sizes,
 ) inherits kubernetes::master::params {
-  file { '/etc/kubernetes/master/apiserver.conf':
+
+  file { '/etc/kubernetes/apiserver':
     ensure  => 'file',
     force   => true,
     content => template("${module_name}/etc/kubernetes/master/apiserver.erb"),
   } ~> Service['kube-apiserver']
+
 }

@@ -17,10 +17,16 @@ class kubernetes::master::config (
     $master_package_version  = 'latest',
   ) inherits kubernetes {
 
-  file { '/etc/kubernetes/master/config.conf':
+  file { '/etc/kubernetes/config':
     ensure  => 'file',
     force   => true,
     content => template("${module_name}/etc/kubernetes/master/config.conf.erb"),
+  } ->
+  file { '/etc/kubernetes/manifests':
+    ensure  => 'directory',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
   } ->
   class { 'kubernetes::master::apiserver': } ->
   class { 'kubernetes::master::controller_manager': } ->

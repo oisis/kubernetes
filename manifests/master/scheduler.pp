@@ -145,7 +145,7 @@ class kubernetes::master::scheduler (
   $scheduler_vmodule                      = $kubernetes::master::params::scheduler_vmodule,
 ) inherits kubernetes::master::params {
   include ::kubernetes::master
-  file { '/etc/kubernetes/master/scheduler.conf':
+  file { '/etc/kubernetes/scheduler':
     ensure  => 'file',
     force   => true,
     content => template("${module_name}/etc/kubernetes/master/scheduler.erb"),
