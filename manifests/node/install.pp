@@ -20,6 +20,6 @@ class kubernetes::node::install (
   package { 'kubernetes-node':
     ensure      => $node_package_ensure,
     name        => $node_package_name,
-    require     => Yumrepo['kubernetes', 'docker'],
+#    require     => Yumrepo['kubernetes', 'docker'],
   }
 }

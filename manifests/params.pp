@@ -13,6 +13,6 @@
 #   Defaults to node
 #
 class kubernetes::params {
-  $manage_repo      = 'true'
+  $manage_repo      = 'false'
   $kubernetes_role  = 'node'
 }

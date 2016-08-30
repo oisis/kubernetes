@@ -13,11 +13,9 @@
 #   Defaults to master
 #
 class kubernetes::master (
-  $manage_repo      = 'true',
   $kubernetes_role  = 'master',
 ) inherits kubernetes {
 
-  class { 'kubernetes::repo': } ->
   class { 'kubernetes::master::install': } ->
   class { 'kubernetes::master::config': } ->
   class { 'kubernetes::master::service': }

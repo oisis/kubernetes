@@ -19,6 +19,10 @@ class kubernetes (
   $kubernetes_role  = 'node',
 ) inherits kubernetes::params {
 
+  if $manage_repo == 'true' {
+    include ::kubernetes::repo
+  }
+
   if $kubernetes_role == 'master' {
     include kubernetes::master
   } else {

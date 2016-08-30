@@ -20,6 +20,5 @@ class kubernetes::master::install (
   package { 'kubernetes-master':
     ensure      => $master_package_ensure,
     name        => $master_package_name,
-    require     => Yumrepo['kubernetes', 'docker'],
   }
 }
