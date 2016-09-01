@@ -2,16 +2,16 @@
 # kubernetes kubelet (minion) config
 
 # The address for the info server to serve on (set to 0.0.0.0 or "" for all interfaces)
-KUBELET_ADDRESS="--address=<%= scope['kubernetes::node::kubelet::kubelet_address'] %>"
+KUBELET_ADDRESS=" --address=<%= scope['kubernetes::node::kubelet::kubelet_address'] %>"
 
 # The port for the info server to serve on
-KUBELET_PORT="--port=<%= scope['kubernetes::node::kubelet::kubelet_port'] %>"
+KUBELET_PORT=" --port=<%= scope['kubernetes::node::kubelet::kubelet_port'] %>"
 
 # You may leave this blank to use the actual hostname
 KUBELET_HOSTNAME="<% if @kubelet_hostname_override -%>--hostname-override=<%= scope['kubernetes::node::kubelet::kubelet_hostname_override'] %><% end -%>"
 
 # location of the api-server
-KUBELET_API_SERVERS="<% if @kubelet_api_servers -%>--api-servers=<%= Array(scope['kubernetes::node::kubelet::kubelet_api_servers']).join(',') %><% end -%>"
+KUBELET_API_SERVER="<% if @kubelet_api_servers -%>--api-servers=<%= Array(scope['kubernetes::node::kubelet::kubelet_api_servers']).join(',') %><% end -%>"
 
 
 KUBELET_ARGS="<% -%>
