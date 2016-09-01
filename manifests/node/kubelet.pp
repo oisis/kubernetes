@@ -714,7 +714,7 @@ class kubernetes::node::kubelet (
     } ~> Service['docker']
   }
 
-  file { '/etc/kubernetes/kubelet.conf':
+  file { '/etc/kubernetes/kubelet':
     ensure  => 'file',
     content => template("${module_name}/etc/kubernetes/node/kubelet.erb"),
   } ~> Service['kubelet']

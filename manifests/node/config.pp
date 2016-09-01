@@ -17,7 +17,7 @@ class kubernetes::node::config (
     $node_package_version  = 'latest',
   ) inherits kubernetes {
 
-  file { '/etc/kubernetes/config.conf':
+  file { '/etc/kubernetes/config':
     ensure  => 'file',
     force   => true,
     content => template("${module_name}/etc/kubernetes/node/config.conf.erb"),

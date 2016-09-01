@@ -178,7 +178,7 @@ class kubernetes::node::kube_proxy (
 #  validate_bool($cleanup_iptables, $masquerade_all)
 #  validate_integer([$healthz_port, $oom_score_adj,])
 
-  file { '/etc/kubernetes/kube-proxy.conf':
+  file { '/etc/kubernetes/proxy':
     ensure  => 'file',
     content => template("${module_name}/etc/kubernetes/node/kube-proxy.conf.erb"),
   } ~>
