@@ -59,7 +59,7 @@ class kubernetes::node::params {
   $kubelet_kube_api_burst = 10
   $kubelet_kube_api_qps = 5
   $kubelet_kube_reserved = undef
-  $kubelet_kubeconfig = "/var/lib/kubelet/kubeconfig"
+  $kubelet_kubeconfig = undef
   $kubelet_kubelet_cgroups = undef
   $kubelet_lock_file = undef
   $kubelet_log_backtrace_at = undef
