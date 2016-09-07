@@ -22,6 +22,12 @@ class kubernetes::node::config (
     force   => true,
     content => template("${module_name}/etc/kubernetes/node/config.conf.erb"),
   } ->
+  file { '/etc/kubernetes/manifests':
+    ensure  => 'directory',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+  } ->
   class { 'kubernetes::node::kube_proxy': } ->
   class { 'kubernetes::node::kubelet': }
 }
