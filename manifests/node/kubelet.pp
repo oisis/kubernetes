@@ -570,7 +570,7 @@
 #   usage for all pods and volumes.  To disable volume calculations, set to 0.
 #   ** Defaults to '1m0s'
 #
-# [*extra_args*]
+# [*kubelet_extra_args*]
 #   Extra arguments for kubelet daemon.
 #   ** Defaults to non
 
