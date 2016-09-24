@@ -121,6 +121,7 @@ class kubernetes::node::params {
   $kubelet_vmodule = undef
   $kubelet_volume_plugin_dir = "/usr/libexec/kubernetes/kubelet-plugins/volume/exec/"
   $kubelet_volume_stats_agg_period = '1m0s'
+  $kubelet_extra_args = undef
   # proxy options
   # http://kubernetes.io/v1.1/docs/admin/kube-proxy.html
   $kubeproxy_service_ensure = "running"
