@@ -169,4 +169,5 @@ class kubernetes::master::params {
   $scheduler_stderrthreshold = 2
   $scheduler_v = 0
   $scheduler_vmodule = undef
+  $scheduler_extra_args  = undef
 }
