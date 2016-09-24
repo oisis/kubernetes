@@ -82,6 +82,7 @@ class kubernetes::master::params {
   $apisrv_vmodule = undef
   $apisrv_watch_cache = true
   $apisrv_watch_cache_sizes = undef
+  $apisrv_extra_args = undef
   # controller-manager config defaults
   $conman_service_ensure = "running"
   $conman_service_enable = "true"
