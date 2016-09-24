@@ -153,4 +153,5 @@ class kubernetes::node::params {
   $kubeproxy_udp_timeout = "250ms"
   $kubeproxy_v = 0
   $kubeproxy_vmodule = undef
+  $kubeproxy_extra_args = undef
 }
