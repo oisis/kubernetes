@@ -143,6 +143,7 @@ class kubernetes::master::params {
   $conman_terminated_pod_gc_threshold = 12500
   $conman_v = 0
   $conman_vmodule = undef
+  $conman_extra_args = undef
   # scheduler config defaults
   $scheduler_service_ensure = "running"
   $scheduler_service_enable = true
